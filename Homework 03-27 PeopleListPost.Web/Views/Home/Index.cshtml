@@ -1,0 +1,30 @@
+﻿@using Homework_03_27_PeopleListPost.Web.Models
+@using PeopleListPost.Data
+@model PeopleViewModel
+
+
+<div b-ud2x8zyu5z class="container">
+    <main b-ud2x8zyu5z role="main" class="pb-3">
+        <div class="row">
+            <div class="col-md-12">
+                <a href="/home/AddForm" class="btn btn-success">Add People</a>
+                <table class="table table-hover table-bordered">
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Age</th>
+                    </tr>
+                    @foreach (Person p in Model.People)
+                    {
+                        <tr>
+                            <td>@p.FirstName</td>
+                            <td>@p.LastName</td>
+                            <td>@p.Age</td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+
+    </main>
+</div>
