@@ -1,24 +1,5 @@
 ﻿$(() => {
-    $("input").on('input', function () {
-        ensureValidity()
-    })
-
-    function ensureValidity() {
-
-
-        const firstName = $("#firstName").val()//.trim()
-        const lastName = $("#lastName").val()//.trim()
-        const age = $("#age").val()//.trim()
-
-
-        const isValid = firstName && lastName && age && isValidNumber(age)
-        console.log(!isValid)
-        $(".btn-primary").prop("disabled", !isValid)
-
-    }
-
-    const isValidNumber = value => !Number.isNaN(Number(value));
-
+    
     let numOfRows = 1
     $("#add-rows").on("click", function () {
         addRow()
@@ -41,4 +22,3 @@
     }
 })
 
-//<div id="ppl-rows">

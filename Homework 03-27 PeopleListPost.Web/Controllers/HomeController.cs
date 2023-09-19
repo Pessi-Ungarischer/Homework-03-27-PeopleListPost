@@ -14,6 +14,10 @@ namespace Homework_03_27_PeopleListPost.Web.Controllers
             {
                 People = peopleDB.GetPeople()
             };
+            if(TempData != null)
+            {
+                peopleVM.Message = (string)TempData["Message"];
+            }
             return View(peopleVM);
         }
 
@@ -29,6 +33,7 @@ namespace Homework_03_27_PeopleListPost.Web.Controllers
         {
             PeopleDataBase peopleDB = new();
             peopleDB.AddManyPeople(people);
+            TempData["Message"] = $"{people.Count} people added successfully!";
             return Redirect("/");
         }
 
